@@ -4,7 +4,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>blt checkbox</title>
 <style>
-	.checkbox{height:16px;width:16px;cursor:pointer;margin:5px;background:url('images/checkbox-unchecked.gif') no-repeat;}
+	.clear{clear:both;}
+	.checkbox{height:16px;width:16px;cursor:pointer;margin:5px;background:url('images/checkbox-unchecked.gif') no-repeat;clear:both;float:left;}
+	label{float:left;vertical-align:baseline;}
 	.checkbox input{display:none;}
 	.checkbox.checked{background:url('images/checkbox-checked.gif') no-repeat;}
 </style>
@@ -33,22 +35,26 @@ $(window).load(function(){
 
 <body>
 	<p>Checkboxes can be grouped to act like radio inputs.</p>
-	<div class="checkbox checkbox-group1" id="checkbox_group1_1"><input type="radio" id="checkbox_checkbox1_1" name="checkbox1[]" class="hidden"></div>
-    <div class="checkbox checkbox-group1" id="checkbox_group1_2"><input type="radio" id="checkbox_checkbox1_2" name="checkbox2[]" class="hidden"></div>
-    <div class="checkbox checkbox-group1" id="checkbox_group1_3"><input type="radio" id="checkbox_checkbox1_3" name="checkbox3[]" class="hidden"></div>
+	<div class="checkbox checkbox-group1" id="checkbox_group1_1"><input type="radio" id="checkbox_checkbox1_1" name="checkbox1[]" class="hidden"></div><label for="checkbox_group1_1">Option 1</label>
+    <div class="checkbox checkbox-group1" id="checkbox_group1_2"><input type="radio" id="checkbox_checkbox1_2" name="checkbox2[]" class="hidden"></div><label for="checkbox_group1_2">Option 2</label>
+    <div class="checkbox checkbox-group1" id="checkbox_group1_3"><input type="radio" id="checkbox_checkbox1_3" name="checkbox3[]" class="hidden"></div><label for="checkbox_group1_3">Option 3</label>
+    <div class="clear"></div>
     <br><br>
     <div class="checkbox checkbox-group2" id="checkbox_group2_1"><input type="radio" id="checkbox_checkbox2_1" name="checkbox1[]" class="hidden"></div>
     <div class="checkbox checkbox-group2" id="checkbox_group2_2"><input type="radio" id="checkbox_checkbox2_2" name="checkbox2[]" class="hidden"></div>
     <div class="checkbox checkbox-group2" id="checkbox_group2_3"><input type="radio" id="checkbox_checkbox2_3" name="checkbox3[]" class="hidden"></div>
+    <div class="clear"></div>
     
     <p>Or they can act like normal checkboxes.</p>
     <div class="checkbox checkbox-group3" id="checkbox_group3_1"><input type="checkbox" id="checkbox_checkbox3_1" name="checkbox1[]" class="hidden"></div>
     <div class="checkbox checkbox-group3" id="checkbox_group3_2"><input type="checkbox" id="checkbox_checkbox3_2" name="checkbox2[]" class="hidden"></div>
     <div class="checkbox checkbox-group3" id="checkbox_group3_3"><input type="checkbox" id="checkbox_checkbox3_3" name="checkbox3[]" class="hidden"></div>
+    <div class="clear"></div>
     
     <p>Three types of callbacks: Checked, unchecked, and changed. Be careful as on checked and on change can be called at the same time. Only use onChange when you need to know if the user changed an option. The callbacks get passed an object containing a variable 'changedItem','data.unCheckedItem', or 'data.checkedItem' which is the id of the div container that was checked.</p>
     <div class="checkbox checkbox-group4" id="checkbox_group4_1"><input type="checkbox" id="checkbox_checkbox4_1" name="checkbox1[]" class="hidden"></div>
     <div class="checkbox checkbox-group4" id="checkbox_group4_2"><input type="checkbox" id="checkbox_checkbox4_2" name="checkbox2[]" class="hidden"></div>
     <div class="checkbox checkbox-group4" id="checkbox_group4_3"><input type="checkbox" id="checkbox_checkbox4_3" name="checkbox3[]" class="hidden"></div>
+    <div class="clear"></div>
 </body>
 </html>
