@@ -12,11 +12,14 @@
 		var thisClone = this;
 		var numChecked = 0;
 		return this.each(function(){
-			$('input',this).attr(settings.checkedClass,false);
+			if($('input',this).attr('checked')){
+				$(this).addClass(settings.checkedClass);
+				numChecked++;
+			}
 			$(this).click(function(){
 				if($(this).hasClass(settings.checkedClass)){
 					$(this).removeClass(settings.checkedClass);
-					$('input',this).attr(settings.checkedClass,false);
+					$('input',this).attr('checked',false);
 					if(numChecked>0) numChecked--;
 					var callbackData = new Object();
 					callbackData.unCheckedItem = $('input',this).attr("id");
@@ -34,7 +37,7 @@
 						});
 					}
 					$(this).addClass(settings.checkedClass);
-					$('input',this).attr(settings.checkedClass,true);
+					$('input',this).attr('checked',true);
 					numChecked++;
 					var callbackData = new Object();
 					callbackData.checkedItem = $('input',this).attr("id");
