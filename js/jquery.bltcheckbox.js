@@ -22,16 +22,17 @@
 					$('input',this).attr('checked',false);
 					if(numChecked>0) numChecked--;
 					var callbackData = new Object();
-					callbackData.unCheckedItem = $('input',this).attr("id");
+					callbackData.unCheckedItem = $('input',this).attr('id');
 					settings.onUnchecked(callbackData);
 				} else {
 					if(settings.restricted===true){
 						thisClone.each(function(){
 							if($(this).hasClass(settings.checkedClass)) {
 								$(this).removeClass(settings.checkedClass);
+								$('input',this).attr('checked',false);
 								if(numChecked>0) numChecked--;
 								var callbackData = new Object();
-								callbackData.changedItem = $('input',this).attr("id");
+								callbackData.changedItem = $('input',this).attr('id');
 								settings.onChange(callbackData);
 							}					
 						});
@@ -40,7 +41,7 @@
 					$('input',this).attr('checked',true);
 					numChecked++;
 					var callbackData = new Object();
-					callbackData.checkedItem = $('input',this).attr("id");
+					callbackData.checkedItem = $('input',this).attr('id');
 					settings.onChecked(callbackData);
 				}
 			});
